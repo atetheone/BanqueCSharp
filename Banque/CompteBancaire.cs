@@ -45,7 +45,7 @@ namespace CompteBanqueNS
                 throw new ArgumentOutOfRangeException("Montant doit être positif");
             }
 
-            m_solde += montant; // code intentionnellement faux
+            m_solde -= montant;
         }
 
         public void Créditer(double montant)
@@ -63,12 +63,12 @@ namespace CompteBanqueNS
             m_solde += montant;
         }
 
-        public void BloquerCompte()
+        private void BloquerCompte()
         {
             m_bloqué = true;
         }
 
-        public void DébloquerCompte()
+        private void DébloquerCompte()
         {
             m_bloqué = false;
         }
